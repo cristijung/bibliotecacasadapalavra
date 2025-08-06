@@ -1,0 +1,23 @@
+
+// definição da paleta de cores
+$color-black: #1a1a1a;
+$color-white: #ffffff;
+$color-gray-dark: #333333;
+$color-gray-medium: #666666;
+$color-gray-light: #f0f0f0;
+$color-purple: #8a2be2; 
+$color-pink: #ff69b4;   
+$color-orange: #ffa500; 
+
+// gradientes para uso na UI
+$gradient-hero: linear-gradient(135deg, $color-purple 0%, $color-pink 50%, $color-orange 100%);
+$gradient-button: linear-gradient(45deg, $color-pink, $color-orange);
+
+// sombras
+$shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-dark: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+// transições
+$transition-fast: 0.2s ease-in-out;
+$transition-medium: 0.3s ease-in-out;
+$transition-slow: 0.5s ease-in-out;
