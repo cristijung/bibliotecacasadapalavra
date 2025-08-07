@@ -1,0 +1,99 @@
+@import '../../styles/colorr.module';
+
+.bookCard {
+  background-color: $color-white;
+  border-radius: 15px;
+  box-shadow: $shadow-light;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-dark;
+  }
+
+  .bookCover {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .bookTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $color-black;
+    margin-bottom: 0.5rem;
+  }
+
+  .bookAuthor {
+    font-size: 0.9rem;
+    color: $color-gray-medium;
+    margin-bottom: 1rem;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .actionButton {
+    background-color: transparent;
+    border: 1px solid $color-gray-light;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-gray-medium;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover {
+      background-color: $color-purple;
+      color: $color-white;
+      border-color: $color-purple;
+    }
+
+    &.favorited {
+      color: $color-pink;
+      border-color: $color-pink;
+
+      &:hover {
+        background-color: $color-pink;
+        color: $color-white;
+      }
+    }
+  }
+
+  .shareButtonGroup {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .viewButton {
+    background: $gradient-button;
+    color: $color-white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity $transition-fast;
+    width: 100%;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

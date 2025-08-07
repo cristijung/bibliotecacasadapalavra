@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "O Grande Livro",
+    "author": "Autor Famoso",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+1",
+    "description": "Uma história épica sobre a busca pelo conhecimento e a superação de desafios inimagináveis. Perfeito para quem gosta de fantasia e aventura."
+  },
+  {
+    "id": 2,
+    "title": "Aventura no Desconhecido",
+    "author": "Escritor Misterioso",
+    "cover": "https://placehold.co/150x220/ff69b4/ffffff?text=Livro+2",
+    "description": "Prepare-se para uma jornada emocionante através de terras inexploradas. Este livro vai te prender da primeira à última página com seus mistérios e reviravoltas."
+  },
+  {
+    "id": 3,
+    "title": "O Segredo Antigo",
+    "author": "Narrador Lendário",
+    "cover": "https://placehold.co/150x220/ffa500/ffffff?text=Livro+3",
+    "description": "Um mistério envolvente que se desenrola ao longo de séculos. Descubra segredos esquecidos e desvende o enigma que assola uma família por gerações."
+  },
+  {
+    "id": 4,
+    "title": "O Mistério da Caverna",
+    "author": "Escritor Iniciante",
+    "cover": "https://placehold.co/150x220/cccccc/ffffff?text=Livro+4",
+    "description": "Um mistério envolvente que se desenrola ao longo de séculos. Descubra segredos esquecidos e desvende o enigma que assola uma família por gerações."
+  }
+]
