@@ -1,0 +1,155 @@
+
+@import '../../styles/colorr.module'; 
+
+.header {
+  background-color: $color-black;
+  color: $color-white;
+  padding: 1rem 0;
+  box-shadow: $shadow-light;
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.logo {
+  text-decoration: none;
+  color: $color-white;
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    background: $gradient-button; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; 
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+.nav {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  li {
+    margin-left: 2rem;
+
+    @media (max-width: 768px) {
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+.navLink {
+  color: $color-white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative; 
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-pink;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $color-purple;
+    transition: width $transition-fast;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.searchBar {
+  padding: 0.6rem 1rem;
+  border: 1px solid $color-gray-medium;
+  border-radius: 25px;
+  background-color: $color-gray-dark;
+  color: $color-white;
+  font-size: 0.9rem;
+  margin-right: 1rem;
+  transition: border-color $transition-fast, background-color $transition-fast;
+
+  &::placeholder {
+    color: $color-gray-medium;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-purple;
+    background-color: lighten($color-gray-dark, 5%);
+  }
+
+  @media (max-width: 768px) {
+    width: 70%;
+    margin-right: 0.5rem;
+  }
+}
+
+.userButton {
+  background: none;
+  border: none;
+  color: $color-white;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color $transition-fast, color $transition-fast;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    background-color: $color-gray-dark;
+    color: $color-pink;
+  }
+}

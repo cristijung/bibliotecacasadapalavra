@@ -1,56 +1,15 @@
 
-@import '../styles/_colors.module.scss'; 
+@import './styles/colorr.module';
 
 .pageContainer {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; // garante que o footer fique no final da página
+  min-height: 100vh;
   font-family: 'Inter', sans-serif;
   background-color: $color-white;
   color: $color-gray-dark;
 }
 
-main {
-  flex-grow: 1; // permite que o conteúdo principal ocupe o espaço disponível
-}
-
-.section {
-  padding: 4rem 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    padding: 2rem 15px;
-  }
-}
-
-.sectionTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: $color-black;
-  background: linear-gradient(90deg, $color-purple, $color-pink);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent; // fallback
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-}
-
-.sectionSubtitle {
-  font-size: 1.2rem;
-  color: $color-gray-medium;
-  margin-bottom: 3rem;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-}
 
 .bookGrid {
   display: grid;
@@ -124,7 +83,7 @@ main {
   border-radius: 20px;
   margin-top: 4rem;
   margin-bottom: 4rem;
-  padding: 4rem 20px; // ajuste o padding para a seção de eventos
+  padding: 4rem 20px;
 }
 
 .eventList {
@@ -209,9 +168,9 @@ main {
   text-align: center;
 
   .sectionTitle {
-    color: $color-white; // eobrescreve o gradiente para branco no CTA
-    -webkit-text-fill-color: $color-white; // garante a cor branca
-    background: none; // remove o gradiente de fundo
+    color: $color-white;
+    -webkit-text-fill-color: $color-white;
+    background: none;
   }
 
   p {
@@ -237,56 +196,5 @@ main {
     transform: translateY(-3px);
     box-shadow: $shadow-dark;
     color: $color-pink;
-  }
-}
-
-.footer {
-  background-color: $color-black;
-  color: $color-white;
-  padding: 2rem 0;
-  text-align: center;
-  margin-top: 4rem; // espaçamento antes do footer
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-      gap: 1rem;
-    }
-  }
-
-  p {
-    font-size: 0.9rem;
-    color: $color-gray-medium;
-  }
-}
-
-.socialLinks {
-  display: flex;
-  gap: 1rem;
-}
-
-.socialIcon {
-  color: $color-white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  background-color: $color-gray-dark;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color $transition-fast, color $transition-fast;
-
-  &:hover {
-    background-color: $color-purple;
-    color: $color-white;
   }
 }
