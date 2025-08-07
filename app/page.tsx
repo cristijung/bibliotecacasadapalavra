@@ -1,15 +1,34 @@
 import Hero from "./components/hero/Hero";
+import BookCard from "./components/BookCard/BookCard";
 import styles from "./page.module.scss";
 import Image from "next/image";
 import LogoHome from "./../public/logo_bi.png";
 
-export default function Home() {
+// lib para ler o arquivo JSON
+import { promises as fs } from 'fs';
+import path from 'path';
+
+interface Book {
+  id: number;
+  title: string;
+  author: string;
+  cover: string;
+  description: string;
+}
+
+// função assíncrona para buscar os dados.
+export default async function Home() {  
+  const filePath = path.join(process.cwd(), 'app', 'data', 'books.json');
+  // lê o arquivo JSON como uma string
+  const fileContents = await fs.readFile(filePath, 'utf8');
+  // converte a string JSON para um array de objetos TypeScript
+  const booksData: Book[] = JSON.parse(fileContents);
+
   return (
     <div className={styles.pageContainer}>
       <main>
         <Hero />
         <div className={styles.principal}>
-          {/* seções de destaque -- ver depois p trocar para Image..*/}
           <section className={styles.section}>
             <div className={styles.headerContent}>
               <Image
@@ -28,46 +47,16 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            {/* aqui dá p ter um carrossel */}
+            
             <div className={styles.bookGrid}>
-              {/* card de livro -- ver depois p criar um componente bookcard.tsx */}
-              <div className={styles.bookCard}>
-                <img
-                  src="https://placehold.co/150x220/8a2be2/ffffff?text=Livro+1"
-                  alt="Capa do Livro 1"
-                  className={styles.bookCover}
-                />
-                <h3 className={styles.bookTitle}>O Grande Livro</h3>
-                <p className={styles.bookAuthor}>Por Autor Famoso</p>
-                <button className={styles.viewButton}>Ver Detalhes</button>
-              </div>
-              <div className={styles.bookCard}>
-                <img
-                  src="https://placehold.co/150x220/ff69b4/ffffff?text=Livro+2"
-                  alt="Capa do Livro 2"
-                  className={styles.bookCover}
-                />
-                <h3 className={styles.bookTitle}>Aventura no Desconhecido</h3>
-                <p className={styles.bookAuthor}>Por Escritor Misterioso</p>
-                <button className={styles.viewButton}>Ver Detalhes</button>
-              </div>
-              <div className={styles.bookCard}>
-                <img
-                  src="https://placehold.co/150x220/ffa500/ffffff?text=Livro+3"
-                  alt="Capa do Livro 3"
-                  className={styles.bookCover}
-                />
-                <h3 className={styles.bookTitle}>O Segredo Antigo</h3>
-                <p className={styles.bookAuthor}>Por Narrador Lendário</p>
-                <button className={styles.viewButton}>Ver Detalhes</button>
-              </div>
-              {/* colocar + cards aqui se precisar */}
+              {/* map dinâmico do componente BookCard */}
+              {booksData.map((book) => (
+                <BookCard key={book.id} book={book} />
+              ))}
             </div>
           </section>
 
-          {/* seção de eventos */}
           <section className={`${styles.section} ${styles.eventsSection}`}>
-            {/* como se coloca mais de uma classe no scss p não esquecer */}
             <h2 className={styles.sectionTitle}>Próximos Eventos</h2>
             <p className={styles.sectionSubtitle}>
               Participe de nossos workshops, clubes de leitura e encontros com
@@ -88,8 +77,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-
-          {/* seção "about" e CTA */}
+          
           <section className={`${styles.section} ${styles.aboutCtaSection}`}>
             <div className={styles.aboutContent}>
               <h2 className={styles.sectionTitle}>
@@ -118,7 +106,6 @@ export default function Home() {
         </div>
       </main>
 
-      {/* footer  depois criar um componente p ele*/}
       <footer className={styles.footer}>
         <div className={styles.container}>
           <p>
@@ -126,15 +113,9 @@ export default function Home() {
             reservados.
           </p>
           <div className={styles.socialLinks}>
-            <a href="#" className={styles.socialIcon}>
-              FB
-            </a>
-            <a href="#" className={styles.socialIcon}>
-              IG
-            </a>
-            <a href="#" className={styles.socialIcon}>
-              TW
-            </a>
+            <a href="#" className={styles.socialIcon}>FB</a>
+            <a href="#" className={styles.socialIcon}>IG</a>
+            <a href="#" className={styles.socialIcon}>TW</a>
           </div>
         </div>
       </footer>

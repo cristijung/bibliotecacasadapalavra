@@ -4,8 +4,8 @@
 .pageContainer {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; // Garante que o footer fique no final da página
-  font-family: 'Inter', sans-serif; // Fonte Inter para todo o projeto
+  min-height: 100vh; // garante que o footer fique no final da página
+  font-family: 'Arial', sans-serif; 
   background-color: $color-white;
   color: $color-gray-dark;
 }
@@ -23,39 +23,39 @@
   }
 }
 
-// Novos estilos para o cabeçalho da seção (logo e texto ao lado)
+
 .headerContent {
   display: flex;
   align-items: center;
-  justify-content: center; // Centraliza o conteúdo horizontalmente
-  gap: 2rem; // Espaçamento entre o logo e o texto
-  margin-bottom: 3rem; // Espaçamento abaixo deste bloco
+  justify-content: center; 
+  gap: 2rem; 
+  margin-bottom: 3rem; 
 
   @media (max-width: 768px) {
-    flex-direction: column; // Empilha verticalmente em telas menores
+    flex-direction: column; 
     gap: 1.5rem;
     text-align: center;
   }
 }
 
 .logoSection {
-  flex-shrink: 0; // Impede que o logo encolha
-  // Você pode adicionar mais estilos para o logo aqui, se quiser
+  flex-shrink: 0; 
+  // depois colocar outros estilos
 }
 
 .textContainer {
-  flex-grow: 1; // Permite que o texto ocupe o espaço restante
-  text-align: left; // Alinha o texto à esquerda por padrão
+  flex-grow: 1; 
+  text-align: left; 
 
   @media (max-width: 768px) {
-    text-align: center; // Centraliza o texto em telas menores
+    text-align: center; 
   }
 }
 
 .sectionTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 0.5rem; // Reduzido para ficar mais próximo do parágrafo
+  margin-bottom: 0.5rem; 
   color: $color-black;
   background: linear-gradient(90deg, $color-purple, $color-pink);
   -webkit-background-clip: text;
@@ -71,8 +71,8 @@
 .sectionSubtitle {
   font-size: 1.2rem;
   color: $color-gray-medium;
-  margin-bottom: 0; // Removido, pois agora está dentro do textContainer
-  opacity: 0.9; // Adiciona uma leve transparência
+  margin-bottom: 0; 
+  opacity: 0.9; 
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -151,7 +151,7 @@
   border-radius: 20px;
   margin-top: 4rem;
   margin-bottom: 4rem;
-  padding: 4rem 20px; // Ajuste o padding para a seção de eventos
+  padding: 4rem 20px; 
 }
 
 .eventList {
@@ -272,7 +272,7 @@
   color: $color-white;
   padding: 2rem 0;
   text-align: center;
-  margin-top: 4rem; // Espaçamento antes do footer
+  margin-top: 4rem; 
 
   .container {
     max-width: 1200px;
