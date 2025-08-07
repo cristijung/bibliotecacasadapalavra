@@ -24,7 +24,7 @@ export default function Home() {
                   Novidades na Casa da Palavra
                 </h2>
                 <p className={styles.sectionSubtitle}>
-                  Confira os títulos recém-chegados à nossa coleção.
+                  Confira os títulos recém chegados à nossa coleção.
                 </p>
               </div>
             </div>
@@ -67,8 +67,7 @@ export default function Home() {
 
           {/* seção de eventos */}
           <section className={`${styles.section} ${styles.eventsSection}`}>
-            {" "}
-            {/* como se coloca mais de uma classe no scss */}
+            {/* como se coloca mais de uma classe no scss p não esquecer */}
             <h2 className={styles.sectionTitle}>Próximos Eventos</h2>
             <p className={styles.sectionSubtitle}>
               Participe de nossos workshops, clubes de leitura e encontros com
