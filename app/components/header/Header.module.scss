@@ -1,155 +1,154 @@
 
-@import '../../styles/colorr.module'; 
+@import '../../styles/colorr.module';
 
-.header {
-  background-color: $color-black;
-  color: $color-white;
-  padding: 1rem 0;
+.header {  
+  background-color: $color-black; 
   box-shadow: $shadow-light;
+  padding: 1rem 0;
   position: sticky;
   top: 0;
-  z-index: 1000; 
+  z-index: 50;
+  transition: transform 0.3s ease-in-out;
 }
 
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0 20px;
+  gap: 2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
+    gap: 1.5rem;
   }
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
-  color: $color-white;
-
+  
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
-    background: $gradient-button; 
+    
+    background: linear-gradient(90deg, $color-pink, $color-orange); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: transparent; 
+    color: transparent; // fallback
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
   }
 
   @media (max-width: 768px) {
-    width: 100%;
-    margin-bottom: 1rem;
+    h1 {
+      font-size: 1.2rem;
+    }
   }
 }
 
 .nav {
+  flex-grow: 1;
   ul {
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
 
-    @media (max-width: 768px) {
-      flex-direction: column;
-      width: 100%;
-      margin-bottom: 1rem;
-    }
-  }
-
-  li {
-    margin-left: 2rem;
-
-    @media (max-width: 768px) {
-      margin: 0.5rem 0;
+    @media (max-width: 992px) {
+      justify-content: center;
+      gap: 1rem;
     }
   }
 }
 
 .navLink {
-  color: $color-white;
+  // mudar depois as cores, mas direto no componente
+  color: $color-white; 
   text-decoration: none;
   font-weight: 500;
-  padding: 0.5rem 0;
-  position: relative; 
+  padding: 0.5rem;
   transition: color $transition-fast;
 
   &:hover {
-    color: $color-pink;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: $color-purple;
-    transition: width $transition-fast;
-  }
-
-  &:hover::after {
-    width: 100%;
+    color: $color-purple;
   }
 }
 
 .actions {
   display: flex;
   align-items: center;
+  gap: 1rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     width: 100%;
     justify-content: center;
   }
 }
 
 .searchBar {
-  padding: 0.6rem 1rem;
-  border: 1px solid $color-gray-medium;
-  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  border: 1px solid $color-gray-light;
+  border-radius: 20px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color $transition-fast, box-shadow $transition-fast;  
   background-color: $color-gray-dark;
   color: $color-white;
-  font-size: 0.9rem;
-  margin-right: 1rem;
-  transition: border-color $transition-fast, background-color $transition-fast;
+
+  width: 250px;
+
+  &:focus {
+    border-color: $color-purple;
+    box-shadow: 0 0 5px rgba($color-purple, 0.2);
+  }
 
   &::placeholder {
     color: $color-gray-medium;
+    opacity: 0.7;
   }
 
-  &:focus {
-    outline: none;
-    border-color: $color-purple;
-    background-color: lighten($color-gray-dark, 5%);
-  }
-
-  @media (max-width: 768px) {
-    width: 70%;
-    margin-right: 0.5rem;
+  @media (max-width: 992px) {
+    width: 100%;
+    max-width: 400px;
   }
 }
 
 .userButton {
   background: none;
-  border: none;
-  color: $color-white;
-  cursor: pointer;
-  padding: 0.5rem;
+  border: 1px solid $color-gray-light;
   border-radius: 50%;
-  transition: background-color $transition-fast, color $transition-fast;
-
-  svg {
-    width: 24px;
-    height: 24px;
-  }
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all $transition-fast;
 
   &:hover {
-    background-color: $color-gray-dark;
-    color: $color-pink;
+    background-color: $color-purple;
+    color: $color-white;
+    border-color: $color-purple;
+    
+    svg {
+      color: $color-white;
+    }
+  }
+
+  svg {
+    color: $color-gray-medium;
+    transition: color $transition-fast;
   }
 }

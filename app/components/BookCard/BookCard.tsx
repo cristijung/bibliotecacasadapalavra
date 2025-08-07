@@ -20,7 +20,7 @@ export default function BookCard({ book }: BookCardProps) {
   const [isFavorited, setIsFavorited] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleShare = (platform: 'facebook' | 'instagram') => {
+  const compartilhar = (platform: 'facebook' | 'instagram') => {
     const bookUrl = window.location.href; // URL da page atual
     const bookTitle = encodeURIComponent(book.title);
     const bookDescription = encodeURIComponent(book.description); // ainda não usado
@@ -57,14 +57,14 @@ export default function BookCard({ book }: BookCardProps) {
           <div className={styles.shareButtonGroup}>
             <button
               className={styles.actionButton}
-              onClick={() => handleShare('facebook')}
+              onClick={() => compartilhar('facebook')}
               aria-label="Compartilhar no Facebook"
             >
               <FaShareAlt />
             </button>
             <button
               className={styles.actionButton}
-              onClick={() => handleShare('instagram')}
+              onClick={() => compartilhar('instagram')}
               aria-label="Compartilhar no Instagram"
             >
               <FaShareAlt />
