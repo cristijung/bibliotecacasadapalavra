@@ -2,12 +2,14 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
+import Logo from '../../../public/logo_bi_nobg.png';
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        {/* aqui vao o logo */}
+        <Image src={Logo} alt="Casa Da Palavra" width={100} height={100} />
         <Link href="/" className={styles.logo}>
           <h1>Biblioteca Casa da Palavra</h1>
         </Link>
