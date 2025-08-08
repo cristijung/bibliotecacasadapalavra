@@ -3,7 +3,7 @@
     "id": 1,
     "title": "A Jornada do Despertar",
     "author": "Elara Vance",
-    "cover": "/books/book-cover-1.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma aventura épica sobre a busca por um artefato lendário que pode salvar ou destruir o mundo. Elara Vance tece uma narrativa cheia de mistério e autodescoberta.",
     "categoria": "romance"
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "title": "O Sussurro da Floresta",
     "author": "Marcus Thorne",
-    "cover": "/books/book-cover-2.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Um mistério arrepiante ambientado em uma floresta remota. A cada passo, a verdade se torna mais obscura e perigosa.",
     "categoria": "terror"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "title": "A Maldição da Meia-Noite",
     "author": "Seraphina Blaise",
-    "cover": "/books/book-cover-3.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Quando a meia-noite se aproxima, a linha entre a realidade e o sobrenatural se desfaz. Uma história de terror que vai te prender até a última página.",
     "categoria": "suspense"
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "title": "A Ascensão do Fênix",
     "author": "Draco Blackwood",
-    "cover": "/books/book-cover-4.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Em um mundo pós-apocalíptico, um grupo de sobreviventes precisa ressurgir das cinzas, como uma fênix, para enfrentar a tirania e a opressão.",
     "categoria": "comedia"
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "title": "O Labirinto do Silêncio",
     "author": "Isabelle Dubois",
-    "cover": "/books/book-cover-5.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma psicóloga é confrontada com o caso de uma paciente que se recusa a falar, mas que se comunica por meio de desenhos que revelam um segredo sombrio.",
     "categoria": "romance"
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "title": "As Ruínas do Tempo",
     "author": "Julian Sterling",
-    "cover": "/books/book-cover-6.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Em uma cidade soterrada por areias do tempo, um arqueólogo descobre um segredo capaz de mudar a história da humanidade.",
     "categoria": "terror"
   },
@@ -51,7 +51,7 @@
     "id": 7,
     "title": "A Sombra da Serpente",
     "author": "Morgana Frost",
-    "cover": "/books/book-cover-7.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma profecia antiga prevê a ascensão de um mal ancestral que se esconde à sombra de uma serpente, ameaçando mergulhar o mundo em trevas.",
     "categoria": "suspense"
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "title": "O Último Guardião",
     "author": "Leonidas Rex",
-    "cover": "/books/book-cover-8.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Um velho guerreiro, o último de sua linhagem, é convocado a proteger um artefato de um exército de sombras que busca dominá-lo.",
     "categoria": "comedia"
   },
@@ -67,7 +67,7 @@
     "id": 9,
     "title": "A Jornada do Despertar",
     "author": "Elara Vance",
-    "cover": "/books/book-cover-1.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma aventura épica sobre a busca por um artefato lendário que pode salvar ou destruir o mundo. Elara Vance tece uma narrativa cheia de mistério e autodescoberta.",
     "categoria": "romance"
   },
@@ -75,7 +75,7 @@
     "id": 10,
     "title": "O Sussurro da Floresta",
     "author": "Marcus Thorne",
-    "cover": "/books/book-cover-2.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Um mistério arrepiante ambientado em uma floresta remota. A cada passo, a verdade se torna mais obscura e perigosa.",
     "categoria": "terror"
   },
@@ -83,7 +83,7 @@
     "id": 11,
     "title": "A Maldição da Meia-Noite",
     "author": "Seraphina Blaise",
-    "cover": "/books/book-cover-3.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Quando a meia-noite se aproxima, a linha entre a realidade e o sobrenatural se desfaz. Uma história de terror que vai te prender até a última página.",
     "categoria": "suspense"
   },
@@ -91,7 +91,7 @@
     "id": 12,
     "title": "A Ascensão do Fênix",
     "author": "Draco Blackwood",
-    "cover": "/books/book-cover-4.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Em um mundo pós-apocalíptico, um grupo de sobreviventes precisa ressurgir das cinzas, como uma fênix, para enfrentar a tirania e a opressão.",
     "categoria": "comedia"
   },
@@ -99,7 +99,7 @@
     "id": 13,
     "title": "O Labirinto do Silêncio",
     "author": "Isabelle Dubois",
-    "cover": "/books/book-cover-5.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma psicóloga é confrontada com o caso de uma paciente que se recusa a falar, mas que se comunica por meio de desenhos que revelam um segredo sombrio.",
     "categoria": "romance"
   },
@@ -107,7 +107,7 @@
     "id": 14,
     "title": "As Ruínas do Tempo",
     "author": "Julian Sterling",
-    "cover": "/books/book-cover-6.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Em uma cidade soterrada por areias do tempo, um arqueólogo descobre um segredo capaz de mudar a história da humanidade.",
     "categoria": "terror"
   },
@@ -115,7 +115,7 @@
     "id": 15,
     "title": "A Sombra da Serpente",
     "author": "Morgana Frost",
-    "cover": "/books/book-cover-7.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma profecia antiga prevê a ascensão de um mal ancestral que se esconde à sombra de uma serpente, ameaçando mergulhar o mundo em trevas.",
     "categoria": "suspense"
   },
@@ -123,7 +123,7 @@
     "id": 16,
     "title": "O Último Guardião",
     "author": "Leonidas Rex",
-    "cover": "/books/book-cover-8.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Um velho guerreiro, o último de sua linhagem, é convocado a proteger um artefato de um exército de sombras que busca dominá-lo.",
     "categoria": "comedia"
   },
@@ -131,7 +131,7 @@
     "id": 17,
     "title": "A Jornada do Despertar",
     "author": "Elara Vance",
-    "cover": "/books/book-cover-1.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma aventura épica sobre a busca por um artefato lendário que pode salvar ou destruir o mundo. Elara Vance tece uma narrativa cheia de mistério e autodescoberta.",
     "categoria": "romance"
   },
@@ -139,7 +139,7 @@
     "id": 18,
     "title": "O Sussurro da Floresta",
     "author": "Marcus Thorne",
-    "cover": "/books/book-cover-2.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Um mistério arrepiante ambientado em uma floresta remota. A cada passo, a verdade se torna mais obscura e perigosa.",
     "categoria": "terror"
   },
@@ -147,7 +147,7 @@
     "id": 19,
     "title": "A Maldição da Meia-Noite",
     "author": "Seraphina Blaise",
-    "cover": "/books/book-cover-3.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Quando a meia-noite se aproxima, a linha entre a realidade e o sobrenatural se desfaz. Uma história de terror que vai te prender até a última página.",
     "categoria": "suspense"
   },
@@ -155,7 +155,7 @@
     "id": 20,
     "title": "A Ascensão do Fênix",
     "author": "Draco Blackwood",
-    "cover": "/books/book-cover-4.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Em um mundo pós-apocalíptico, um grupo de sobreviventes precisa ressurgir das cinzas, como uma fênix, para enfrentar a tirania e a opressão.",
     "categoria": "comedia"
   },
@@ -163,7 +163,7 @@
     "id": 21,
     "title": "O Labirinto do Silêncio",
     "author": "Isabelle Dubois",
-    "cover": "/books/book-cover-5.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma psicóloga é confrontada com o caso de uma paciente que se recusa a falar, mas que se comunica por meio de desenhos que revelam um segredo sombrio.",
     "categoria": "romance"
   },
@@ -171,7 +171,7 @@
     "id": 22,
     "title": "As Ruínas do Tempo",
     "author": "Julian Sterling",
-    "cover": "/books/book-cover-6.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Em uma cidade soterrada por areias do tempo, um arqueólogo descobre um segredo capaz de mudar a história da humanidade.",
     "categoria": "terror"
   },
@@ -179,7 +179,7 @@
     "id": 23,
     "title": "A Sombra da Serpente",
     "author": "Morgana Frost",
-    "cover": "/books/book-cover-7.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma profecia antiga prevê a ascensão de um mal ancestral que se esconde à sombra de uma serpente, ameaçando mergulhar o mundo em trevas.",
     "categoria": "suspense"
   },
@@ -187,7 +187,7 @@
     "id": 24,
     "title": "O Último Guardião",
     "author": "Leonidas Rex",
-    "cover": "/books/book-cover-8.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Um velho guerreiro, o último de sua linhagem, é convocado a proteger um artefato de um exército de sombras que busca dominá-lo.",
     "categoria": "comedia"
   },
@@ -195,7 +195,7 @@
     "id": 25,
     "title": "A Jornada do Despertar",
     "author": "Elara Vance",
-    "cover": "/books/book-cover-1.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma aventura épica sobre a busca por um artefato lendário que pode salvar ou destruir o mundo. Elara Vance tece uma narrativa cheia de mistério e autodescoberta.",
     "categoria": "romance"
   },
@@ -203,7 +203,7 @@
     "id": 26,
     "title": "O Sussurro da Floresta",
     "author": "Marcus Thorne",
-    "cover": "/books/book-cover-2.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Um mistério arrepiante ambientado em uma floresta remota. A cada passo, a verdade se torna mais obscura e perigosa.",
     "categoria": "terror"
   },
@@ -211,7 +211,7 @@
     "id": 27,
     "title": "A Maldição da Meia-Noite",
     "author": "Seraphina Blaise",
-    "cover": "/books/book-cover-3.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Quando a meia-noite se aproxima, a linha entre a realidade e o sobrenatural se desfaz. Uma história de terror que vai te prender até a última página.",
     "categoria": "suspense"
   },
@@ -219,7 +219,7 @@
     "id": 28,
     "title": "A Ascensão do Fênix",
     "author": "Draco Blackwood",
-    "cover": "/books/book-cover-4.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Em um mundo pós-apocalíptico, um grupo de sobreviventes precisa ressurgir das cinzas, como uma fênix, para enfrentar a tirania e a opressão.",
     "categoria": "comedia"
   },
@@ -227,7 +227,7 @@
     "id": 29,
     "title": "O Labirinto do Silêncio",
     "author": "Isabelle Dubois",
-    "cover": "/books/book-cover-5.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma psicóloga é confrontada com o caso de uma paciente que se recusa a falar, mas que se comunica por meio de desenhos que revelam um segredo sombrio.",
     "categoria": "romance"
   },
@@ -235,7 +235,7 @@
     "id": 30,
     "title": "As Ruínas do Tempo",
     "author": "Julian Sterling",
-    "cover": "/books/book-cover-6.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Em uma cidade soterrada por areias do tempo, um arqueólogo descobre um segredo capaz de mudar a história da humanidade.",
     "categoria": "terror"
   },
@@ -243,7 +243,7 @@
     "id": 31,
     "title": "A Sombra da Serpente",
     "author": "Morgana Frost",
-    "cover": "/books/book-cover-7.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma profecia antiga prevê a ascensão de um mal ancestral que se esconde à sombra de uma serpente, ameaçando mergulhar o mundo em trevas.",
     "categoria": "suspense"
   },
@@ -251,7 +251,7 @@
     "id": 32,
     "title": "O Último Guardião",
     "author": "Leonidas Rex",
-    "cover": "/books/book-cover-8.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Um velho guerreiro, o último de sua linhagem, é convocado a proteger um artefato de um exército de sombras que busca dominá-lo.",
     "categoria": "comedia"
   },
@@ -259,7 +259,7 @@
     "id": 33,
     "title": "A Jornada do Despertar",
     "author": "Elara Vance",
-    "cover": "/books/book-cover-1.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma aventura épica sobre a busca por um artefato lendário que pode salvar ou destruir o mundo. Elara Vance tece uma narrativa cheia de mistério e autodescoberta.",
     "categoria": "romance"
   },
@@ -267,7 +267,7 @@
     "id": 34,
     "title": "O Sussurro da Floresta",
     "author": "Marcus Thorne",
-    "cover": "/books/book-cover-2.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Um mistério arrepiante ambientado em uma floresta remota. A cada passo, a verdade se torna mais obscura e perigosa.",
     "categoria": "terror"
   },
@@ -275,7 +275,7 @@
     "id": 35,
     "title": "A Maldição da Meia-Noite",
     "author": "Seraphina Blaise",
-    "cover": "/books/book-cover-3.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Quando a meia-noite se aproxima, a linha entre a realidade e o sobrenatural se desfaz. Uma história de terror que vai te prender até a última página.",
     "categoria": "suspense"
   },
@@ -283,7 +283,7 @@
     "id": 36,
     "title": "A Ascensão do Fênix",
     "author": "Draco Blackwood",
-    "cover": "/books/book-cover-4.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Em um mundo pós-apocalíptico, um grupo de sobreviventes precisa ressurgir das cinzas, como uma fênix, para enfrentar a tirania e a opressão.",
     "categoria": "comedia"
   },
@@ -291,7 +291,7 @@
     "id": 37,
     "title": "O Labirinto do Silêncio",
     "author": "Isabelle Dubois",
-    "cover": "/books/book-cover-5.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma psicóloga é confrontada com o caso de uma paciente que se recusa a falar, mas que se comunica por meio de desenhos que revelam um segredo sombrio.",
     "categoria": "romance"
   },
@@ -299,7 +299,7 @@
     "id": 38,
     "title": "As Ruínas do Tempo",
     "author": "Julian Sterling",
-    "cover": "/books/book-cover-6.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Em uma cidade soterrada por areias do tempo, um arqueólogo descobre um segredo capaz de mudar a história da humanidade.",
     "categoria": "terror"
   },
@@ -307,7 +307,7 @@
     "id": 39,
     "title": "A Sombra da Serpente",
     "author": "Morgana Frost",
-    "cover": "/books/book-cover-7.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Uma profecia antiga prevê a ascensão de um mal ancestral que se esconde à sombra de uma serpente, ameaçando mergulhar o mundo em trevas.",
     "categoria": "suspense"
   },
@@ -315,7 +315,7 @@
     "id": 40,
     "title": "O Último Guardião",
     "author": "Leonidas Rex",
-    "cover": "/books/book-cover-8.jpg",
+    "cover": "https://placehold.co/150x220/8a2be2/ffffff?text=Livro+Img",
     "description": "Um velho guerreiro, o último de sua linhagem, é convocado a proteger um artefato de um exército de sombras que busca dominá-lo.",
     "categoria": "comedia"
   }
