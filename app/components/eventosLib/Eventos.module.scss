@@ -1,0 +1,85 @@
+@import '../../styles/colorr.module'; 
+
+.eventosContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: $color-black;
+  color: $color-white;
+  border-radius: 12px;
+  box-shadow: $shadow-light;
+  margin: 4rem auto;
+  max-width: 800px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: $gradient-hero;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.counter {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.countNumber {
+  font-size: 6rem;
+  font-weight: 900;
+  line-height: 1;
+  color: $color-pink;
+
+  @media (max-width: 768px) {
+    font-size: 4rem;
+  }
+}
+
+.message {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $color-orange;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.unit {
+  font-size: 1.5rem;
+  color: $color-gray-medium;
+  margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.videoPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.animatedImage {
+  border-radius: 8px;
+  box-shadow: $shadow-light;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
