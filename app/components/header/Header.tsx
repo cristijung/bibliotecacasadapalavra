@@ -38,6 +38,7 @@ export default function Header() {
               <li><Link href="/catalogo" className={styles.navLink} onClick={toggleMenu}>Catálogo</Link></li>
               <li><Link href="/eventos" className={styles.navLink} onClick={toggleMenu}>Eventos</Link></li>
               <li><Link href="/sobre" className={styles.navLink} onClick={toggleMenu}>Sobre</Link></li>
+              <li><Link href="/blog" className={styles.navLink} onClick={toggleMenu}>Blog</Link></li>
               <li><Link href="/contato" className={styles.navLink} onClick={toggleMenu}>Contato</Link></li>
             </ul>
           </nav>
