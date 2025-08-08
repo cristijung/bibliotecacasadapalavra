@@ -1,8 +1,7 @@
-
 @import '../../styles/colorr.module';
 
-.header {  
-  background-color: $color-black; 
+.header {
+  background-color: $color-black;
   box-shadow: $shadow-light;
   padding: 1rem 0;
   position: sticky;
@@ -19,30 +18,29 @@
   margin: 0 auto;
   padding: 0 20px;
   gap: 2rem;
+}
 
-  @media (max-width: 992px) {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-  }
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0; 
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
-  
+
   h1 {
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
-    
-    background: linear-gradient(90deg, $color-pink, $color-orange); 
+    background: linear-gradient(90deg, $color-pink, $color-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: transparent; // fallback
+    color: transparent;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -56,8 +54,55 @@
   }
 }
 
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 60; 
+
+  div {
+    width: 2rem;
+    height: 0.25rem;
+    background: $color-white;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+
+  // animação para o 'X'
+  div:first-child.open {
+    transform: rotate(45deg);
+  }
+  div:nth-child(2).open {
+    opacity: 0;
+  }
+  div:last-child.open {
+    transform: rotate(-45deg);
+  }
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 2rem;
+
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
 .nav {
   flex-grow: 1;
+
   ul {
     display: flex;
     list-style: none;
@@ -67,15 +112,63 @@
     gap: 1.5rem;
 
     @media (max-width: 992px) {
-      justify-content: center;
-      gap: 1rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
     }
   }
 }
 
+// styles para o menu hambúrguer
+@media (max-width: 992px) {
+  .menuToggle {
+    display: flex;
+  }
+
+  .navContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($color-black, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 45; // Abaixo do ícone
+
+    &.open {
+      display: flex;
+      transform: translateX(0);
+    }
+  }
+
+  .nav {
+    width: 100%;
+    ul {
+      justify-content: center;
+    }
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .searchBar {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+// resto do link
 .navLink {
-  // mudar depois as cores, mas direto no componente
-  color: $color-white; 
+  color: $color-white;
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem;
@@ -103,10 +196,9 @@
   border-radius: 20px;
   font-size: 1rem;
   outline: none;
-  transition: border-color $transition-fast, box-shadow $transition-fast;  
+  transition: border-color $transition-fast, box-shadow $transition-fast;
   background-color: $color-gray-dark;
   color: $color-white;
-
   width: 250px;
 
   &:focus {
@@ -141,7 +233,7 @@
     background-color: $color-purple;
     color: $color-white;
     border-color: $color-purple;
-    
+
     svg {
       color: $color-white;
     }

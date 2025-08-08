@@ -5,8 +5,8 @@ import Image from "next/image";
 import LogoHome from "./../public/logo_bi.png";
 
 // lib para ler o arquivo JSON
-import { promises as fs } from 'fs';
-import path from 'path';
+import { promises as fs } from "fs";
+import path from "path";
 
 interface Book {
   id: number;
@@ -17,10 +17,10 @@ interface Book {
 }
 
 // função assíncrona para buscar os dados.
-export default async function Home() {  
-  const filePath = path.join(process.cwd(), 'app', 'data', 'books.json');
+export default async function Home() {
+  const filePath = path.join(process.cwd(), "app", "data", "books.json");
   // lê o arquivo JSON como uma string
-  const fileContents = await fs.readFile(filePath, 'utf8');
+  const fileContents = await fs.readFile(filePath, "utf8");
   // converte a string JSON para um array de objetos TypeScript
   const booksData: Book[] = JSON.parse(fileContents);
 
@@ -47,7 +47,7 @@ export default async function Home() {
                 </p>
               </div>
             </div>
-            
+
             <div className={styles.bookGrid}>
               {/* map dinâmico do componente BookCard */}
               {booksData.map((book) => (
@@ -77,7 +77,7 @@ export default async function Home() {
               </div>
             </div>
           </section>
-          
+
           <section className={`${styles.section} ${styles.aboutCtaSection}`}>
             <div className={styles.aboutContent}>
               <h2 className={styles.sectionTitle}>
@@ -105,8 +105,6 @@ export default async function Home() {
           </section>
         </div>
       </main>
-
-     
     </div>
   );
 }
