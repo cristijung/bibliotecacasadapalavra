@@ -5,12 +5,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; 
+  min-height: 100vh;
   background: linear-gradient(180deg, $color-black 0%, lighten($color-black, 5%) 100%); 
   color: $color-white;
   text-align: center;
-  padding: 2rem;
+  padding: 4rem 2rem;
   font-family: 'Inter', sans-serif;
+  box-sizing: border-box; 
 }
 
 .title {
@@ -21,15 +22,19 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent; // fallback
+  color: transparent;
   text-shadow: 0 5px 15px rgba($color-purple, 0.4); 
-
-  @media (max-width: 768px) {
+  
+  @media (max-width: 992px) {
     font-size: 6rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 5rem; 
   }
 
   @media (max-width: 480px) {
-    font-size: 4rem;
+    font-size: 3rem; 
   }
 }
 
@@ -40,12 +45,16 @@
   color: $color-pink; 
   text-shadow: 0 2px 8px rgba($color-pink, 0.2);
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     font-size: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -55,15 +64,21 @@
   margin-bottom: 2.5rem;
   line-height: 1.8;
   color: $color-gray-light; 
+  padding: 0 1rem;
 
   @media (max-width: 768px) {
     font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
 
 .homeButton {
   display: inline-block;
-  background: $gradient-button; // mesmo gradiente dos btns da home
+  background: $gradient-button;
   color: $color-white;
   padding: 1rem 2.5rem;
   border-radius: 30px;
@@ -76,5 +91,10 @@
   &:hover {
     transform: translateY(-3px);
     box-shadow: $shadow-dark;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
   }
 }

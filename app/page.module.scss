@@ -1,78 +1,85 @@
-
-@import './styles/colorr.module';
+@import './styles/colorr.module'; 
 
 .pageContainer {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; // garante que o footer fique no final da página
-  font-family: 'Arial', sans-serif; 
   background-color: $color-white;
-  color: $color-gray-dark;
+  color: $color-white;
 }
 
-
-
-.section {
-  padding: 4rem 20px;
+.principal {
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
+  padding: 2rem 1rem; 
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; 
 
   @media (max-width: 768px) {
-    padding: 2rem 15px;
+    padding: 1.5rem 1rem; 
+    gap: 3rem;
   }
 }
 
+.section {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba($color-gray-dark, 0.5);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
 
 .headerContent {
   display: flex;
   align-items: center;
-  justify-content: center; 
-  gap: 2rem; 
-  margin-bottom: 3rem; 
+  gap: 2rem;
+  margin-bottom: 2rem;
 
   @media (max-width: 768px) {
-    flex-direction: column; 
-    gap: 1.5rem;
+    flex-direction: column;
     text-align: center;
+    gap: 1rem;
   }
 }
 
 .logoSection {
   flex-shrink: 0; 
-  // depois colocar outros estilos
+  width: 150px;
+  height: 150px;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .textContainer {
-  flex-grow: 1; 
-  text-align: left; 
-
-  @media (max-width: 768px) {
-    text-align: center; 
-  }
+  flex-grow: 1;
 }
 
 .sectionTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 0.5rem; 
-  color: $color-black;
-  background: linear-gradient(90deg, $color-purple, $color-pink);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  background: $gradient-hero;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent; // Fallback
+  color: transparent;
+
+  @media (max-width: 992px) {
+    font-size: 2rem;
+  }
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
 .sectionSubtitle {
   font-size: 1.2rem;
   color: $color-gray-medium;
-  margin-bottom: 0; 
-  opacity: 0.9; 
+  margin: 0;
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -81,244 +88,146 @@
 
 .bookGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); // grid responsivo
   gap: 2rem;
-  justify-items: center;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
   }
-}
 
-.bookCard {
-  background-color: $color-white;
-  border-radius: 15px;
-  box-shadow: $shadow-light;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform $transition-fast, box-shadow $transition-fast;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: $shadow-dark;
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr; 
   }
 }
 
-.bookCover {
-  width: 100%;
-  max-width: 150px;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.bookTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: $color-black;
-  margin-bottom: 0.5rem;
-}
-
-.bookAuthor {
-  font-size: 0.9rem;
-  color: $color-gray-medium;
-  margin-bottom: 1rem;
-}
-
-.viewButton {
-  background: $gradient-button;
-  color: $color-white;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: opacity $transition-fast;
-
-  &:hover {
-    opacity: 0.9;
-  }
-}
-
+// eventos
 .eventsSection {
-  background-color: $color-gray-light;
-  border-radius: 20px;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-  padding: 4rem 20px; 
+  text-align: center;
 }
 
 .eventList {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
   gap: 2rem;
+  justify-content: center;
   margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .eventCard {
-  background-color: $color-white;
-  border-radius: 15px;
-  box-shadow: $shadow-light;
-  padding: 2rem;
+  background-color: $color-gray-dark;
+  padding: 1.5rem;
+  border-radius: 10px;
   text-align: left;
-  transition: transform $transition-fast, box-shadow $transition-fast;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: $shadow-dark;
-  }
+  flex: 1; 
+  max-width: 400px;
 
   h3 {
     font-size: 1.5rem;
-    color: $color-black;
-    margin-bottom: 0.8rem;
+    color: $color-pink;
+    margin-bottom: 0.5rem;
   }
 
   p {
     font-size: 1rem;
-    color: $color-gray-medium;
+    color: $color-gray-light;
     margin-bottom: 0.5rem;
   }
-}
 
-.eventButton {
-  background-color: $color-purple;
-  color: $color-white;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  margin-top: 1rem;
-  transition: background-color $transition-fast;
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
 
-  &:hover {
-    background-color: lighten($color-purple, 10%);
+    p {
+      text-align: center;
+    }
   }
 }
 
+.eventButton {  
+  background: $gradient-button;
+  color: $color-white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-light;
+  }
+}
+
+// Sobre e CTA
 .aboutCtaSection {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  text-align: left;
+  display: flex;
+  gap: 2rem;
 
   @media (max-width: 992px) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
+    flex-direction: column;
   }
 }
 
 .aboutContent {
+  flex: 1;
   p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1rem;
     color: $color-gray-dark;
+    line-height: 1.6;
     margin-bottom: 1rem;
   }
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
+
+.aboutAbout {
+  background-color: $color-gray-light;  
+  padding: 2rem;
+  border-radius: 10px;
 }
 
 .ctaContent {
-  background: $gradient-hero;
-  color: $color-white;
-  padding: 3rem;
-  border-radius: 20px;
-  box-shadow: $shadow-dark;
+  flex: 1;
+  background-color: $color-gray-dark;
+  padding: 2rem;
+  border-radius: 10px;
   text-align: center;
 
-  .sectionTitle {
-    color: $color-white;
-    -webkit-text-fill-color: $color-white;
-    background: none;
-  }
-
   p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+    font-size: 1rem;
+    color: $color-gray-light;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
 }
 
-.joinButton {
-  background-color: $color-white;
-  color: $color-purple;
+.joinButton {  
+  background: $gradient-button;
+  color: $color-white;
   padding: 1rem 2.5rem;
   border: none;
   border-radius: 30px;
-  cursor: pointer;
-  font-size: 1.1rem;
   font-weight: 600;
-  box-shadow: $shadow-light;
+  cursor: pointer;
   transition: transform $transition-fast, box-shadow $transition-fast;
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: $shadow-dark;
-    color: $color-pink;
-  }
-}
-
-.footer {
-  background-color: $color-black;
-  color: $color-white;
-  padding: 2rem 0;
-  text-align: center;
-  margin-top: 4rem; 
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-      gap: 1rem;
-    }
+    box-shadow: $shadow-light;
   }
 
-  p {
-    font-size: 0.9rem;
-    color: $color-gray-medium;
+  @media (max-width: 480px) {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
   }
-}
-
-.socialLinks {
-  display: flex;
-  gap: 1rem;
-}
-
-.socialIcon {
-  color: $color-white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  background-color: $color-gray-dark;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color $transition-fast, color $transition-fast;
-
-  &:hover {
-    background-color: $color-purple;
-    color: $color-white;
-  }
-}
-
-.principal {
-  max-width: 85%;
-  margin: auto;
 }

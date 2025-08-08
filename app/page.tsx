@@ -83,16 +83,18 @@ export default async function Home() {
               <h2 className={styles.sectionTitle}>
                 Sobre a Biblioteca Casa da Palavra
               </h2>
-              <p>
-                Somos um refúgio para amantes da leitura e buscadores de
-                conhecimento. Nossa missão é promover a cultura, incentivar a
-                leitura e ser um ponto de encontro para a comunidade.
-              </p>
-              <p>
-                Com uma vasta coleção de livros, eventos culturais e um ambiente
-                acolhedor, a Casa da Palavra é o seu lar para todas as
-                histórias.
-              </p>
+              <div className={styles.aboutAbout}>
+                <p>
+                  Somos um refúgio para amantes da leitura e buscadores de
+                  conhecimento. Nossa missão é promover a cultura, incentivar a
+                  leitura e ser um ponto de encontro para a comunidade.
+                </p>
+                <p>
+                  Com uma vasta coleção de livros, eventos culturais e um
+                  ambiente acolhedor, a Casa da Palavra é o seu lar para todas
+                  as histórias.
+                </p>
+              </div>
             </div>
             <div className={styles.ctaContent}>
               <h2 className={styles.sectionTitle}>Torne-se um Membro!</h2>
