@@ -1,5 +1,3 @@
-// app/components/CardCatalogo/CardCatalogo.tsx
-
 'use client';
 
 import React from 'react';

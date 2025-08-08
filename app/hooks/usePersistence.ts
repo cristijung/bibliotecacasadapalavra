@@ -1,3 +1,4 @@
+// hook personalizado
 
 'use client'; // pois então .... necessário pois usa `useState` e `localStorage`
 
@@ -18,7 +19,7 @@ const usePersistence = <T>(key: string, initialValue: T): [T, (value: T) => void
     if (typeof window !== 'undefined') {
       localStorage.setItem(key, JSON.stringify(value));
     }
-  }, [key, value]);
+  }, [key, value]); //array de dependencias - o effect é executado sempre q a key ou o value mudam - atualiza o localStorage
 
   return [value, setValue];
 };
