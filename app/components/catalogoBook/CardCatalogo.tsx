@@ -1,11 +1,13 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useFavorite, useCart } from '../../hooks/usePersistence';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'; 
-import { FiShoppingCart } from 'react-icons/fi'; 
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useFavorite, useCart } from "../../hooks/usePersistence";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { FiShoppingCart } from "react-icons/fi";
+
+import styles from "./CardBook.module.scss";
 
 interface Book {
   id: number;
@@ -25,43 +27,54 @@ export default function CardCatalogo({ book }: CardCatalogoProps) {
   const { isInCart, toggleCart } = useCart(book.id);
 
   return (
-    <div className="flex flex-col bg-gray-900 rounded-xl overflow-hidden shadow-2xl transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-purple-500/20">
-      <div className="relative w-full pb-[150%]">
+    <div className={styles.card}>
+      <div className={styles.coverContainer}>
         <Image
           src={book.cover}
           alt={`Capa do livro ${book.title}`}
           width={400}
           height={600}
           unoptimized //retirar depois que colocar a imagem correta e/ou consumir de api
-          className="w-full h-full object-cover border-b-4 border-purple-500"
+          className={styles.coverImage}
         />
+
         <button
-          className={`absolute top-4 right-4 bg-black bg-opacity-70 border-none rounded-full w-10 h-10 flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 ${isFavorite ? 'bg-pink-500' : ''}`}
+          className={`${styles.favoriteButton} ${
+            isFavorite ? styles.isFavorite : ""
+          }`}
           onClick={toggleFavorite}
-          aria-label={isFavorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
+          aria-label={
+            isFavorite ? "Remover dos favoritos" : "Adicionar aos favoritos"
+          }
         >
           {isFavorite ? (
-            <AiFillHeart size={24} className="text-white" />
+            <AiFillHeart size={24} className={styles.icon} />
           ) : (
-            <AiOutlineHeart size={24} className="text-white" />
+            <AiOutlineHeart size={24} className={styles.icon} />
           )}
         </button>
       </div>
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-2xl font-bold mb-2 text-white leading-tight">{book.title}</h3>
-        <p className="text-base text-gray-400 mb-1">por {book.author}</p>
-        <p className="text-sm text-purple-400 mb-4 font-semibold capitalize">{book.categoria}</p>
-        <p className="text-sm text-gray-300 leading-relaxed mb-6 flex-grow line-clamp-3">{book.description}</p>
-        <div className="flex items-center justify-between mt-auto gap-4">
-          <Link href={`/livro/${book.id}`} className="bg-gradient-to-r from-purple-500 to-orange-500 text-white px-4 py-4 rounded-full font-semibold text-sm shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl text-center min-w-[120px]">
+
+      <div className={styles.content}>
+        <h3 className={styles.title}>{book.title}</h3>
+        <p className={styles.author}>por {book.author}</p>
+        <p className={styles.category}>{book.categoria}</p>
+        <p className={styles.description}>{book.description}</p>
+        <div className={styles.actions}>
+          <Link href={`/livro/${book.id}`} className={styles.detailsButton}>
             Detalhes
           </Link>
+
           <button
-            className={`bg-transparent border border-gray-600 rounded-full w-12 h-12 flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 ${isInCart ? 'bg-purple-500 border-purple-500' : 'hover:bg-purple-500 hover:border-purple-500'}`}
+            className={`${styles.cartButton} ${
+              isInCart ? styles.isInCart : ""
+            }`}
             onClick={toggleCart}
-            aria-label={isInCart ? 'Remover do carrinho' : 'Adicionar ao carrinho'}
+            aria-label={
+              isInCart ? "Remover do carrinho" : "Adicionar ao carrinho"
+            }
           >
-            <FiShoppingCart size={24} className={`transition-colors duration-200 ${isInCart ? 'text-white' : 'text-gray-400'}`} />
+            <FiShoppingCart size={24} className={styles.cartIcon} />
           </button>
         </div>
       </div>

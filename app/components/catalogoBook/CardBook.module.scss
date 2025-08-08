@@ -1,0 +1,163 @@
+@import '../../styles/colorr.module';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-gray-dark; 
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: $shadow-dark; 
+  transition: transform $transition-medium, box-shadow $transition-medium;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 15px -3px rgba($color-purple, 0.2), 0 4px 6px -2px rgba($color-purple, 0.2);
+  }
+}
+
+.coverContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 150%;
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 4px solid $color-purple; 
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba($color-black, 0.7); 
+  border: none;
+  border-radius: 9999px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all $transition-fast;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.isFavorite {
+    background-color: $color-pink; 
+  }
+}
+
+.icon {
+  color: $color-white; 
+}
+
+.content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: $color-white; 
+  line-height: 1.25;
+}
+
+.author {
+  font-size: 1rem;
+  color: $color-gray-medium; 
+  margin-bottom: 0.25rem;
+}
+
+.category {
+  font-size: 0.875rem;
+  color: $color-purple; 
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: $color-gray-light; 
+  line-height: 1.625;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  gap: 1rem;
+}
+
+.detailsButton {
+  background-image: $gradient-button; 
+  color: $color-white; 
+  padding: 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  box-shadow: $shadow-light; 
+  transition: all $transition-fast;
+  text-align: center;
+  min-width: 120px;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-dark; 
+  }
+}
+
+.cartButton {
+  background-color: transparent;
+  border: 1px solid $color-gray-medium; 
+  border-radius: 9999px;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.isInCart {
+    background-color: $color-purple; 
+    border-color: $color-purple; 
+  }
+  
+  &:hover:not(.isInCart) {
+    background-color: $color-purple; 
+    border-color: $color-purple; 
+  }
+}
+
+.cartIcon {
+  color: $color-gray-medium; 
+  transition: color $transition-fast;
+  
+  .cartButton.isInCart & {
+    color: $color-white; 
+  }
+}
