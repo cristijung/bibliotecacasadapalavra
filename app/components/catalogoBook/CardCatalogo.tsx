@@ -1,13 +1,14 @@
 "use client";
 
-import React from "react";
+import React from "react"; 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "next/link"; 
 import { useFavorite, useCart } from "../../hooks/usePersistence";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 
 import styles from "./CardBook.module.scss";
+
 
 interface Book {
   id: number;
@@ -15,7 +16,7 @@ interface Book {
   author: string;
   cover: string;
   description: string;
-  categoria: string;
+  categoria: string;  
 }
 
 interface CardCatalogoProps {
@@ -26,6 +27,7 @@ export default function CardCatalogo({ book }: CardCatalogoProps) {
   const { isFavorite, toggleFavorite } = useFavorite(book.id);
   const { isInCart, toggleCart } = useCart(book.id);
 
+  
   return (
     <div className={styles.card}>
       <div className={styles.coverContainer}>
@@ -34,7 +36,7 @@ export default function CardCatalogo({ book }: CardCatalogoProps) {
           alt={`Capa do livro ${book.title}`}
           width={400}
           height={600}
-          unoptimized //retirar depois que colocar a imagem correta e/ou consumir de api
+          unoptimized // trocar depois de colocar a img
           className={styles.coverImage}
         />
 
@@ -58,10 +60,11 @@ export default function CardCatalogo({ book }: CardCatalogoProps) {
       <div className={styles.content}>
         <h3 className={styles.title}>{book.title}</h3>
         <p className={styles.author}>por {book.author}</p>
-        <p className={styles.category}>{book.categoria}</p>
+        <p className={styles.category}>{book.categoria}</p>        
         <p className={styles.description}>{book.description}</p>
-        <div className={styles.actions}>
-          <Link href={`/livro/${book.id}`} className={styles.detailsButton}>
+        
+        <div className={styles.actions}>          
+          <Link href="/login" className={styles.detailsButton}>
             Detalhes
           </Link>
 
@@ -77,7 +80,7 @@ export default function CardCatalogo({ book }: CardCatalogoProps) {
             <FiShoppingCart size={24} className={styles.cartIcon} />
           </button>
         </div>
-      </div>
+      </div>      
     </div>
   );
 }

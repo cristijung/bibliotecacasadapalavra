@@ -23,7 +23,7 @@ export default function BookCard({ book }: BookCardProps) {
   const compartilhar = (platform: 'facebook' | 'instagram') => {
     const bookUrl = window.location.href; // URL da page atual
     const bookTitle = encodeURIComponent(book.title);
-    const bookDescription = encodeURIComponent(book.description); // ainda não usado
+    //const bookDescription = encodeURIComponent(book.description); // ainda não usado
 
     if (platform === 'facebook') {
       window.open(
