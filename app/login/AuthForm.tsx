@@ -14,6 +14,7 @@ interface User {
   password: string;
 }
 
+
 // validação para Login
 const loginSchema = z.object({  
   email: z.email("E-mail inválido").min(1, "E-mail é obrigatório"),
@@ -30,6 +31,9 @@ const registerSchema = z.object({
   path: ["confirmPassword"], 
 });
 
+// aqui o Zod é usacdo p extrair o tipo q foi inferido nos schem e a lib
+// deduz com base na estrutura declarada anteriormente vai assumir que:
+// email é string e senha é string
 type CombinedAuthFormInputs = z.infer<typeof loginSchema> & {
   confirmPassword?: string;
 };
@@ -75,7 +79,7 @@ export default function AuthForm() {
       const users = getUsersFromLocalStorage();
 
       if (isRegisterMode) {
-        // aqui vai a do REGISTRO com localStorage depois se substitui pela API
+        // aqui vai a lógica do REGISTRO com localStorage depois se substitui pela API
         const userExists = users.some(user => user.email === data.email);
         if (userExists) {
           throw new Error("E-mail já cadastrado. Por favor, faça login.");
@@ -88,7 +92,7 @@ export default function AuthForm() {
         setIsRegisterMode(false); // voltando para o modo de login após o cadastro
         reset();
       } else {
-        // aqui vai a do LOGIN com localStorage depois se substitui pela API
+        // aqui vai a lógica do LOGIN com localStorage depois se substitui pela API
         const foundUser = users.find(
           user => user.email === data.email && user.password === data.password
         );

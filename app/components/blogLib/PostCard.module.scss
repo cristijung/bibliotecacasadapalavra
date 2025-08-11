@@ -3,14 +3,14 @@
 .card {
   display: flex;
   flex-direction: column;
-  background-color: $color-gray-light;
-  border-radius: 0.75rem;
-  overflow: hidden;
+  background-color: $color-white;
+  border-radius: 12px;
   box-shadow: $shadow-light;
+  overflow: hidden;
   transition: transform $transition-medium, box-shadow $transition-medium;
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     box-shadow: $shadow-dark;
   }
 }
@@ -18,71 +18,97 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
 }
 
 .postImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+}
+
+.actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.actionButton {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: $color-purple;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color $transition-fast, color $transition-fast;
+
+  &:hover {
+    background-color: $color-purple;
+    color: $color-white;
+  }
+
+  &.favorited {
+    background-color: $color-pink;
+    color: $color-white;
+  }
 }
 
 .content {
-  padding: 1.5rem;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  gap: 8px;
 }
 
 .category {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: $color-purple;
-  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: $color-gray-medium;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
 .title {
   font-size: 1.5rem;
-  font-weight: 700;
-  color: $color-black;
-  margin-bottom: 0.75rem;
+  color: $color-gray-dark;
+  margin: 0;
   line-height: 1.3;
 }
 
 .excerpt {
   font-size: 1rem;
   color: $color-gray-medium;
-  margin-bottom: 1rem;
   line-height: 1.5;
-  flex-grow: 1;
 }
 
 .meta {
   display: flex;
-  flex-direction: column;
-  font-size: 0.875rem;
-  color: $color-gray-dark;
-  margin-top: auto;
-  margin-bottom: 1rem;
-  
-  .author {
-    font-weight: 600;
-  }
-  
-  .date {
-    color: $color-gray-medium;
-  }
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: $color-gray-medium;
+}
+
+.author,
+.date {
+  font-weight: 400;
 }
 
 .readMore {
-  display: inline-block;
+  margin-top: 10px;
   font-weight: 600;
   color: $color-purple;
+  text-decoration: none;
   transition: color $transition-fast;
 
   &:hover {
-    color: $color-pink;
+    color: $color-orange;
   }
 }

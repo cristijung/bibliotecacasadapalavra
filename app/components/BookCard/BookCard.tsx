@@ -1,35 +1,37 @@
 'use client';
 
-import { useState } from 'react';
 import styles from './BookCard.module.scss';
 import { FaShareAlt, FaHeart } from 'react-icons/fa';
-import BookModal from './bookModal/BookModal'; 
+import BookModal from './bookModal/BookModal';
+import { useState } from 'react';
+import { useFavorites, Book } from '../../context/FavoritesContext'; 
 
 interface BookCardProps {
-  book: {
-    id: number;
-    title: string;
-    author: string;
-    cover: string;
-    description: string;
-  };
+  book: Book; // usando a tipagem do contexto
 }
 
 export default function BookCard({ book }: BookCardProps) {
-  const [isFavorited, setIsFavorited] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { addFavorite, removeFavorite, isFavorite } = useFavorites();
+
+  const handleFavoriteClick = () => {
+    if (isFavorite(book.id)) {
+      removeFavorite(book.id);
+    } else {
+      addFavorite(book);
+    }
+  };
 
   const compartilhar = (platform: 'facebook' | 'instagram') => {
-    const bookUrl = window.location.href; // URL da page atual
+    const bookUrl = window.location.href; 
     const bookTitle = encodeURIComponent(book.title);
-    //const bookDescription = encodeURIComponent(book.description); // ainda não usado
 
     if (platform === 'facebook') {
       window.open(
         `https://www.facebook.com/sharer/sharer.php?u=${bookUrl}&quote=${bookTitle}`,
         '_blank'
       );
-    } else if (platform === 'instagram') {      
+    } else if (platform === 'instagram') {
       alert('Compartilhe no Instagram: Salve a imagem da capa e use a hashtag #BibliotecaCasaDaPalavra');
     }
   };
@@ -37,7 +39,6 @@ export default function BookCard({ book }: BookCardProps) {
   return (
     <>
       <div className={styles.bookCard}>
-        {/* depois trocar para Image */}
         <img
           src={book.cover}
           alt={`Capa do Livro: ${book.title}`}
@@ -47,8 +48,8 @@ export default function BookCard({ book }: BookCardProps) {
         <p className={styles.bookAuthor}>Por {book.author}</p>
         <div className={styles.actions}>
           <button
-            className={`${styles.actionButton} ${isFavorited ? styles.favorited : ''}`}
-            onClick={() => setIsFavorited(!isFavorited)}
+            className={`${styles.actionButton} ${isFavorite(book.id) ? styles.favorited : ''}`}
+            onClick={handleFavoriteClick}
             aria-label="Favoritar"
           >
             <FaHeart />
