@@ -45,13 +45,13 @@ export default function Header() {
 
           {/* search bar e icone do user */}
           <div className={styles.actions}>
-            <input type="text" placeholder="Pesquisar livros..." className={styles.searchBar} />
-            <button className={styles.userButton}>
+            <input type="text" placeholder="Pesquisar livros..." className={styles.searchBar} />            
+            <Link href="/login" className={styles.userButton} aria-label="Área do Usuário">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
