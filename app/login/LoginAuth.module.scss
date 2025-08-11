@@ -1,0 +1,151 @@
+
+@import '../styles/colorr.module'; 
+
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--header-height, 0px) - var(--footer-height, 0px)); 
+  background-color: #f0f2f5; 
+  padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+.authBox {
+  background-color: #ffffff;
+  border-radius: 0.75rem; 
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px; 
+  text-align: center;
+}
+
+.title {
+  font-size: 2.25rem; 
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 1.5rem;
+}
+
+.formToggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  button {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555555;
+    background-color: #f7f7f7;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:first-child {
+      border-right: 1px solid #e0e0e0;
+    }
+
+    &.active {      
+      background: $gradient-button; 
+      color: $color-white; 
+    }
+
+    &:hover:not(.active) {
+      background-color: #eeeeee;
+    }
+  }
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #444444;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid $color-gray-medium; 
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: $color-black; 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; 
+
+  &:focus {
+    border-color: $color-pink; 
+    box-shadow: 0 0 0 3px rgba(255, 107, 129, 0.2); 
+    outline: none;
+  }
+}
+
+.errorMessage {
+  color: #d32f2f; 
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.9rem 1.5rem;  
+  background: $gradient-button; 
+  color: $color-white; 
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease, filter 0.3s ease;
+
+  &:hover {
+    filter: brightness(1.1); 
+    transform: translateY(-1px); 
+  }
+
+  &:active {
+    transform: translateY(0);
+    filter: brightness(0.9); 
+  }
+
+  &:disabled {
+    background: $color-gray-light; 
+    cursor: not-allowed;
+    filter: none; 
+  }
+}
+
+.switchText {
+  font-size: 0.95rem;
+  color: $color-gray-dark; 
+  margin-top: 1.5rem;
+
+  button {
+    background: none;
+    border: none;
+    color: $color-pink; 
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 0.3rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-orange; 
+    }
+  }
+}
