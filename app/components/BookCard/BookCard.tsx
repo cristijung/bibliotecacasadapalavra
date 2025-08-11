@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import styles from './BookCard.module.scss';
 import { FaShareAlt, FaHeart } from 'react-icons/fa';
-import { FiExternalLink } from 'react-icons/fi'; // ver aqui depois ...
 import BookModal from './bookModal/BookModal'; 
 
 interface BookCardProps {
