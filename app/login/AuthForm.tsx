@@ -4,32 +4,57 @@ import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod"; 
 import { zodResolver } from "@hookform/resolvers/zod"; 
+import { useRouter } from 'next/navigation'; // useRouter para redirecionamento
 
 import styles from "./LoginAuth.module.scss";
 
+// tipos para um usuário simplificado para armazenar no localStorage - isto está mockado
+interface User {
+  email: string;
+  password: string;
+}
+
 // validação para Login
-const loginSchema = z.object({
-  email: z.string().email("E-mail inválido").min(1, "E-mail é obrigatório"),
+const loginSchema = z.object({  
+  email: z.email("E-mail inválido").min(1, "E-mail é obrigatório"),
   password: z.string().min(1, "Senha é obrigatória"),
 });
 
-//  validação para Cadastro
-const registerSchema = z.object({
-  email: z.string().email("E-mail inválido").min(1, "E-mail é obrigatório"),
+// validação para Cadastro
+const registerSchema = z.object({  
+  email: z.email("E-mail inválido").min(1, "E-mail é obrigatório"),
   password: z.string().min(6, "A senha deve ter pelo menos 6 caracteres"),
   confirmPassword: z.string().min(1, "Confirmação de senha é obrigatória"),
 }).refine((data) => data.password === data.confirmPassword, {
   message: "As senhas não coincidem",
-  path: ["confirmPassword"], // caminho para exibir o erro no campo de confirmação ......
+  path: ["confirmPassword"], 
 });
 
 type CombinedAuthFormInputs = z.infer<typeof loginSchema> & {
   confirmPassword?: string;
 };
 
+// functions utilitarias para o localStorage
+const LOCAL_STORAGE_KEY = "mock_users";
+
+const getUsersFromLocalStorage = (): User[] => {
+  if (typeof window !== 'undefined') { // garantindo que estamos no ambiente do navegador
+    const usersJson = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return usersJson ? JSON.parse(usersJson) : [];
+  }
+  return [];
+};
+
+const saveUsersToLocalStorage = (users: User[]) => {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(users));
+  }
+};
+
 export default function AuthForm() {
   const [isRegisterMode, setIsRegisterMode] = useState(false);
-  const [authMessage, setAuthMessage] = useState<string | null>(null); // msg de sucesso/erro
+  const [authMessage, setAuthMessage] = useState<string | null>(null); 
+  const router = useRouter(); 
 
   const {
     register,
@@ -40,38 +65,47 @@ export default function AuthForm() {
     resolver: zodResolver(isRegisterMode ? registerSchema : loginSchema),
   });
 
-  // Handler de submissão do formulário
   const onSubmit: SubmitHandler<CombinedAuthFormInputs> = async (data) => {
-    setAuthMessage(null); // limpando as mensagens anteriores
+    setAuthMessage(null); 
 
     try {
+      // simulação de delay de rede
+      await new Promise(resolve => setTimeout(resolve, 500)); 
+
+      const users = getUsersFromLocalStorage();
+
       if (isRegisterMode) {
-        // aqui vai a Lógica de REGISTRO e depois se substitui pela API de registro
-        console.log("Tentativa de Registro:", data);
-        // simulação de API
-        await new Promise(resolve => setTimeout(resolve, 1000)); 
-        if (data.email === "erro@exemplo.com") {
-          throw new Error("E-mail já cadastrado!");
+        // aqui vai a do REGISTRO com localStorage depois se substitui pela API
+        const userExists = users.some(user => user.email === data.email);
+        if (userExists) {
+          throw new Error("E-mail já cadastrado. Por favor, faça login.");
         }
+
+        const newUser: User = { email: data.email, password: data.password };
+        saveUsersToLocalStorage([...users, newUser]);
+        
         setAuthMessage("Cadastro realizado com sucesso! Faça login para continuar.");
+        setIsRegisterMode(false); // voltando para o modo de login após o cadastro
+        reset();
       } else {
-        // aqui vai a Lógica de LOGIN e depois se substitui pela API de registro
-        console.log("Tentativa de Login:", data);
-        // simulação de API
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        if (data.email !== "test@exemplo.com" || data.password !== "senha123") {
+        // aqui vai a do LOGIN com localStorage depois se substitui pela API
+        const foundUser = users.find(
+          user => user.email === data.email && user.password === data.password
+        );
+
+        if (!foundUser) {
           throw new Error("E-mail ou senha incorretos.");
         }
-        setAuthMessage("Login realizado com sucesso! Redirecionando..."); //dá para colocar um spinner
-        // exemplo de redirecionamento após o login
-        // será preciso importar useRouter do 'next/navigation' para isso -- IMPORTANTE
-        // import { useRouter } from 'next/navigation';
-        // const router = useRouter();
-        // router.push('/dashboard'); 
+
+        setAuthMessage("Login realizado com sucesso! Redirecionando para a área privada...");
+        // simular a persistência de sessão, podemos salvar um token mock no localStorage aqui q depois pode ser na API
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('isAuthenticated', 'true');
+          localStorage.setItem('currentUserEmail', data.email);
+        }
+        router.push('/area-privada'); 
       }
-      reset(); // limpando o formulário após o sucesso
     } catch (error: unknown) { 
-      // tratameno seguro do tipo 'unknown' -- acima normalmente se usaria o 'any' mas..., não é boa prática
       if (error instanceof Error) {
         setAuthMessage(error.message || "Ocorreu um erro. Tente novamente.");
       } else if (typeof error === 'string') {
