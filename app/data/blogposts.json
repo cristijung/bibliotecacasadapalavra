@@ -4,7 +4,7 @@
     "id": 1,
     "title": "Guia completo para começar sua biblioteca pessoal",
     "excerpt": "Descubra como organizar seus livros, quais gêneros escolher e como manter sua coleção sempre atualizada com as últimas novidades.",
-    "image": "/images/blog/post1.jpg",
+    "image": "/biblioteca.webp",
     "category": "Organização",
     "author": "Ana Clara",
     "date": "10 de Julho, 2025"
@@ -13,7 +13,7 @@
     "id": 2,
     "title": "Os 10 melhores livros de ficção científica de todos os tempos",
     "excerpt": "Uma lista imperdível para os amantes de ficção. De clássicos distópicos a aventuras espaciais épicas, prepare-se para viajar por universos incríveis.",
-    "image": "/images/blog/post2.jpg",
+    "image": "/melhores-livros.jpg",
     "category": "Listas",
     "author": "Pedro Henrique",
     "date": "05 de Julho, 2025"
@@ -22,7 +22,7 @@
     "id": 3,
     "title": "Como a leitura pode transformar sua mente e criatividade",
     "excerpt": "Explore os benefícios cognitivos da leitura e veja como um simples hábito pode te tornar mais criativo, empático e inteligente no dia a dia.",
-    "image": "/images/blog/post3.jpg",
+    "image": "/leitura.jpg",
     "category": "Desenvolvimento Pessoal",
     "author": "Mariana Silva",
     "date": "28 de Junho, 2025"

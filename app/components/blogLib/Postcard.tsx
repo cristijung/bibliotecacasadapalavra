@@ -3,19 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaHeart, FaShareAlt } from 'react-icons/fa';
-import { useFavorites, Book } from '../../context/FavoritesContext';
+import { useFavorites } from '../../context/FavoritesContext';
 import styles from './PostCard.module.scss';
-
-
-interface Post extends Book {
-  id: number;
-  title: string;
-  excerpt: string;
-  image: string;
-  category: string;
-  author: string;
-  date: string;
-}
+import { Post } from '../../types';
 
 interface PostCardProps {
   post: Post;
@@ -32,7 +22,7 @@ export default function PostCard({ post }: PostCardProps) {
         id: post.id,
         title: post.title,
         author: post.author,
-        cover: post.image,
+        cover: post.image, 
         description: post.excerpt,
       });
     }
