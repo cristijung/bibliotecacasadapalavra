@@ -1,88 +1,31 @@
 @import '../../styles/colorr.module';
 
-.card {
-  display: flex;
-  flex-direction: column;
-  background-color: $color-gray-light;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: $shadow-light;
-  transition: transform $transition-medium, box-shadow $transition-medium;
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
 
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: $shadow-dark;
+  @media (max-width: 1200px) {
+    padding: 16px;
   }
-}
-
-.imageContainer {
-  position: relative;
-  width: 100%;
-  height: 200px;
-}
-
-.postImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.category {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: $color-purple;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
 }
 
 .title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: $color-black;
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
-}
-
-.excerpt {
-  font-size: 1rem;
-  color: $color-gray-medium;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-  flex-grow: 1;
-}
-
-.meta {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.875rem;
+  font-family: var(--font-geist-sans);
+  font-size: 2.5rem;
   color: $color-gray-dark;
-  margin-top: auto;
-  margin-bottom: 1rem;
-  
-  .author {
-    font-weight: 600;
-  }
-  
-  .date {
-    color: $color-gray-medium;
-  }
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.readMore {
-  display: inline-block;
-  font-weight: 600;
-  color: $color-purple;
-  transition: color $transition-fast;
+.postsGrid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 
-  &:hover {
-    color: $color-pink;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }

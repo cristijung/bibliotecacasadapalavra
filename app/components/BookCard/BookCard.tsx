@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { useFavorites, Book } from '../../context/FavoritesContext'; 
 
 interface BookCardProps {
-  book: Book; // Use a tipagem do contexto
+  book: Book; // usando a tipagem do contexto
 }
 
 export default function BookCard({ book }: BookCardProps) {
