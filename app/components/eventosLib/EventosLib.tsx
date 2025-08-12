@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image'; 
-import styles from './Eventos.module.scss';
-import videoPlaceholder from '../../../public/video-placeholder.png'; 
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import styles from "./Eventos.module.scss";
+import videoPlaceholder from "../../../public/video-placeholder.png";
 
 export default function EventosLib() {
   const [eventCount, setEventCount] = useState(10);
@@ -14,11 +14,9 @@ export default function EventosLib() {
       setEventStarted(true);
       return;
     }
-
     const timer = setInterval(() => {
       setEventCount((prevCount) => prevCount - 1);
     }, 1000);
-
     return () => clearInterval(timer);
   }, [eventCount]);
 
