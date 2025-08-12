@@ -11,6 +11,7 @@
 - ReactHookForm: `npm install react-hook-form`
 - Resolvers: `npm install zod @hookform/resolvers` --> Lib para validação de forms
 - React Icons: `npm install react-icons`
+- Testes - Jest e Testing Library: `npm install --save-dev jest @testing-library/react @testing-library/jest-dom jest-environment-jsdom`
 
 _________________________________________________
 _________________________________________________
